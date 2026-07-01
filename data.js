@@ -22,6 +22,7 @@ const TRIP_DATA = {
       theme: "出發日",
       themeEn: "Departure Day",
       color: "#E8734A",
+      drive: { distance: "—", time: "抵達日", distanceEn: "—", timeEn: "Arrival Day" },
       accommodation: {
         name: "Best Western Brighton Inn",
         address: "Brighton, CO",
@@ -51,6 +52,7 @@ const TRIP_DATA = {
       theme: "前往埃斯蒂斯公園",
       themeEn: "To Estes Park",
       color: "#4A90D9",
+      drive: { distance: "約 75 英里 / 120 公里", time: "約 1.5–2 小時", distanceEn: "~75 mi / 120 km", timeEn: "~1.5–2 hrs" },
       accommodation: {
         name: "Estes Park Airbnb",
         address: "2760 Old Fall River Road, Estes Park, CO 80517",
@@ -113,13 +115,14 @@ const TRIP_DATA = {
       theme: "洛磯山 · 高山湖泊健行",
       themeEn: "RMNP · Alpine Lakes Hike",
       color: "#27AE60",
+      drive: { distance: "公園內接駁 / 步行", time: "全天健行", distanceEn: "In-park shuttle / walk", timeEn: "Full day hike" },
       accommodation: {
         name: "Estes Park Airbnb",
         address: "2760 Old Fall River Road, Estes Park, CO 80517",
         coords: [40.3982, -105.5431]
       },
-      note: "注意：7月4日（健行）和7月5日（公路）可依體力和天氣狀況對調。最好早上完成行程，下午容易下雨。",
-      noteEn: "Note: July 4 (hiking) and July 5 (scenic drive) can be swapped depending on weather and energy. Best to finish activities by early afternoon — thunderstorms are common in the afternoon at altitude.",
+      note: "⏰ 入園時間：早上 5–7 AM 務必進入 Rocky Mountain National Park 停車場，過後停車位會爆滿。需提前在 recreation.gov 申請 Timed Entry Permit（熊湖區域）。注意：7月4日與7月5日可依體力和天氣狀況對調，最好早上完成行程，下午容易下雷雨。",
+      noteEn: "⏰ Entry Timing: Arrive at Rocky Mountain National Park by 5–7 AM — parking fills up fast after that. Timed Entry Permit required for Bear Lake corridor (book at recreation.gov in advance). July 4 & 5 can be swapped based on weather. Finish activities before early afternoon — afternoon thunderstorms are common at altitude.",
       stops: [
         {
           id: "bear-lake",
@@ -188,6 +191,7 @@ const TRIP_DATA = {
       theme: "洛磯山 · 山脊公路駕車遊",
       themeEn: "RMNP · Trail Ridge Road Drive",
       color: "#8E44AD",
+      drive: { distance: "約 48 英里 / 77 公里（風景公路）", time: "約 3–4 小時（含停留）", distanceEn: "~48 mi / 77 km (scenic road)", timeEn: "~3–4 hrs incl. stops" },
       accommodation: {
         name: "Estes Park Airbnb",
         address: "2760 Old Fall River Road, Estes Park, CO 80517",
@@ -261,6 +265,7 @@ const TRIP_DATA = {
       theme: "前往基斯通 · 7.5小時路程",
       themeEn: "Drive to Keystone, SD · 7.5 hrs",
       color: "#E67E22",
+      drive: { distance: "約 480 英里 / 773 公里", time: "約 7.5 小時（含停留）", distanceEn: "~480 mi / 773 km", timeEn: "~7.5 hrs incl. stops" },
       accommodation: {
         name: "Keystone Airbnb",
         address: "901 Echo Valley Road, Keystone, SD 57751",
@@ -323,17 +328,20 @@ const TRIP_DATA = {
       theme: "死木 · 荒地國家公園西段",
       themeEn: "Deadwood · Badlands West",
       color: "#C0392B",
+      drive: { distance: "約 190 英里 / 305 公里", time: "約 4 小時（含公園遊覽）", distanceEn: "~190 mi / 305 km", timeEn: "~4 hrs driving + park time" },
       accommodation: {
         name: "Keystone Airbnb",
         address: "901 Echo Valley Road, Keystone, SD 57751",
         coords: [43.8958, -103.4293]
       },
+      note: "荒地國家公園佔地24.4萬英亩，是全球化石層最豐富的地區之一，也是美國最大的混合草原之一。古印第安拉科塔族稱此地為 mako sica（惡地）：下雨時黏土滑腻难行，峽谷縱橫使導航困難，冬寒夏熱水源稀缺。法國毛皮獵人也留下「難以穿越的壞地」的描述。然而正是這片「惡地」，孕育出令人嘆為觀止的色彩斑斕地貌，宛如整個公園是一個甜點拼盤。建議以Pinnacles入口（I-90出口110）進入，沿240號公路往東南方向行駛，沿途停靠各觀景台。",
+      noteEn: "Badlands covers 244,000 acres and holds one of the world's richest fossil beds. The Lakota people named it 'mako sica' (bad lands) — wet clay becomes impossibly slick, canyons block navigation, and summers are scorching. Yet this 'bad land' produces extraordinary layered landscapes of reds, yellows, purples, and greys. Enter via Pinnacles Entrance (I-90 Exit 110) and follow Hwy 240 southeast, stopping at overlooks along the way.",
       stops: [
         {
           id: "deadwood",
           name: "死木歷史小鎮",
           nameEn: "Deadwood Historic Site",
-          coords: [44.3767, -103.7296],
+          coords: [44.3764, -103.7295],
           time: "上午",
           timeEn: "Morning",
           intro: "1876年黃金熱潮中崛起的傳奇西部小鎮，被稱為「狂野西部」的縮影。傳奇槍手「野蠻比爾」希科克（Wild Bill Hickok）在此被射殺，「火災珍」（Calamity Jane）也在此留下足跡。整個鎮幾乎是歷史遺址，保留了當年淘金時代的建築和氛圍。街道兩旁是復古的沙龍、賭場和博物館。強烈建議入手自助導覽地圖，沿途聆聽這段充滿血腥與傳奇的歷史。",
@@ -344,7 +352,7 @@ const TRIP_DATA = {
           id: "saloon-no10",
           name: "第十號沙龍 · Wild Bill 槍擊重演（可選）",
           nameEn: "Saloon No. 10 — Wild Bill Show (Optional)",
-          coords: [44.3762, -103.7301],
+          coords: [44.3763, -103.7298],
           time: "週一至六 下午 1:00（可選）",
           timeEn: "Mon–Sat 1 PM (Optional)",
           intro: "1876年8月2日，「野蠻比爾」希科克在這家沙龍打撲克牌時，被杰克·麥考爾從背後開槍射殺。據說他手中拿著一副黑桃A、梅花A、黑桃8、梅花8，後世稱之為「死亡之手（Dead Man's Hand）」。每天下午1時（週一至六），沙龍都會舉行免費的槍擊案重演戲劇表演，臨場感十足，老少咸宜，值得一看。",
@@ -358,8 +366,8 @@ const TRIP_DATA = {
           coords: [43.7540, -102.5793],
           time: "下午（西段）",
           timeEn: "Afternoon (West Area)",
-          intro: "荒地國家公園西段較少人造訪的觀景台，因此更加寧靜。此地的考古發現顯示，一萬多年前的古代印第安獵人曾在這片荒地邊緣追蹤猛獁象和古代野牛。從觀景台可俯瞰層層相疊的紅黃岩層向遠方延伸，蒼涼壯闊。是荒地西段的好起點。",
-          introEn: "A quieter, less-visited overlook in the western unit of Badlands. Archaeological evidence shows ancient hunters pursued mammoths and ancient bison here over 10,000 years ago. The view stretches across layered red and yellow rock formations into a vast, primal landscape. A peaceful start to the western Badlands loop.",
+          intro: "荒地西段較為幽靜的觀景台，設有鋪設完好的小徑，讓人有一種脫離時間與空間的壯美感受。此地的考古發現記載了一萬多年前的古代獵人在這片荒地邊緣追蹤猛獁象和古代野牛的蹤跡。站在觀景台上，層層疊疊的沉積岩山丘向遠方延伸，蒼涼壯闊——人類在這片大地面前顯得如此渺小。",
+          introEn: "A peaceful overlook with a short paved path that evokes a profound sense of timelessness. Archaeological finds document ancient hunters who tracked mammoths and ancient bison here over 10,000 years ago. Walk the short trail and feel the strange beauty of standing outside ordinary time and space. Less crowded than the eastern overlooks.",
           photos: []
         },
         {
@@ -369,8 +377,41 @@ const TRIP_DATA = {
           coords: [43.7628, -102.4738],
           time: "下午",
           timeEn: "Afternoon",
-          intro: "荒地最具色彩衝擊力的觀景點！紅、黃、橙、紫、灰多色岩層交疊，色彩之豐富宛如大自然的調色盤。不同時間和光線下，顏色的飽和度截然不同——午後陽光斜射時，黃色和橙色格外鮮豔。「黃丘」絕對是Badlands最上相的一個停留點。",
-          introEn: "The most colorful viewpoint in Badlands — a riot of red, yellow, orange, purple, and grey layered rock bands. The saturated colors shift dramatically throughout the day; afternoon light makes the yellows and oranges absolutely glow. This is Badlands at its most photogenic — don't skip it.",
+          intro: "荒地最具色彩衝擊力的觀景點！迎著陽光，黃色為底的土丘彷彿打翻的調色盤——從底部到頂部，黃色、紫色、灰色和條紋狀的紅色沉積物依序排列，分別代表「黃丘」、「內部古土壤」、「查德隆地層」和「布鲁尔地層」。這是荒地地質歷史在岩層中留下的最美麗記錄，絕對是全園最上相的停留點。",
+          introEn: "The most colorful stop in all of Badlands. The yellow-based mounds glow like an upturned palette under the sun. From bottom to top, the layers tell a geological story: yellow (Yellow Mounds), purple (Interior paleosols), grey (Chadron Formation, 35–33.7 million years ago), and red-striped (Brule Formation, 33.7–32 million years ago). The richest and most vivid section of the park.",
+          photos: []
+        },
+        {
+          id: "homestead-overlook",
+          name: "定居點觀景台",
+          nameEn: "Homestead Overlook",
+          coords: [43.7750, -102.3450],
+          time: "下午",
+          timeEn: "Afternoon",
+          intro: "1862年，亞伯拉罕·林肯總統簽署《定居法案》（Homestead Act），允許美國公民申領西部160英畝公共土地，只要在土地上生活改良滿五年即可獲得地契。然而在荒地的惡劣環境下定居談何容易——這裡便是當年早期拓荒者的定居點之一。觀景台俯瞰著當年人們試圖在此生存的土地，令人感慨萬千。",
+          introEn: "In 1862, Lincoln signed the Homestead Act, granting citizens 160 acres of western public land if they lived on and improved it for five years. But settling in the Badlands was brutally difficult — extreme weather, scarce water, and impossible terrain. This overlook marks one of those early settlement attempts. A poignant window into frontier hardship.",
+          photos: []
+        },
+        {
+          id: "panorama-point",
+          name: "全景點 Panorama Point",
+          nameEn: "Panorama Point",
+          coords: [43.7417, -102.5200],
+          time: "下午",
+          timeEn: "Afternoon",
+          intro: "景如其名，「全景點」提供了俯瞰荒地國家公園最廣闊的視野之一。從這個制高點放眼望去，連綿起伏的波浪般山丘、色彩斑斕的沉積岩層和廣袤的草原盡收眼底，是感受荒地壯麗規模的絕佳地點。",
+          introEn: "The name says it all — Panorama Point delivers one of the broadest, most sweeping views in the entire park. Rolling wave-like ridges, colorful banded rock, and endless prairie stretch out in every direction. This is the place to truly grasp the immense scale of the Badlands.",
+          photos: []
+        },
+        {
+          id: "fossil-exhibit-trail",
+          name: "化石展示步道",
+          nameEn: "Fossil Exhibit Trail",
+          coords: [43.7437, -102.5348],
+          time: "下午（可選）",
+          timeEn: "Afternoon (Optional)",
+          intro: "這是一條完全無障礙的木棧道，展示了曾經生活在此地、現已滅絕的遠古生物化石復製品——包括早期的馬、犀牛和三趾馬等。展品設計為可以觸摸的，所以請放心動手感受！步道短而平坦，適合所有年齡層。這裡同時也讓人想像幾千萬年前這片「惡地」曾是鬱鬱蔥蔥的熱帶草原。",
+          introEn: "A fully accessible boardwalk trail showcasing fossil replicas of extinct creatures that once roamed here — early horses, rhinoceroses, and three-toed horses among them. The exhibits are designed to be touched, so go ahead! Short and flat, suitable for all ages. It's a vivid reminder that these 'bad lands' were once lush subtropical grasslands teeming with life.",
           photos: []
         },
         {
@@ -380,8 +421,8 @@ const TRIP_DATA = {
           coords: [43.7876, -102.2736],
           time: "傍晚 · 日落",
           timeEn: "Evening · Sunset",
-          intro: "荒地最受歡迎的觀景台，也是最適合看日落的地點。當夕陽西沉，金紅色的光芒將無數尖銳岩石塔柱染成火焰色，整個天際線彷彿在燃燒，景象震撼人心。建議日落前20–30分鐘到達，搶占最佳位置。這是整個荒地之旅最美麗的句點。",
-          introEn: "The most popular viewpoint in Badlands, and for good reason — it's the perfect sunset stage. As the sun drops, the jagged pinnacles ignite in shades of gold, orange, and crimson. The whole horizon seems to catch fire. Arrive 20–30 minutes before sunset to claim the best spot. An unforgettable finale to the day.",
+          intro: "荒地最受歡迎的觀景台，也是最適合看日落的地點，同時也是大角羊（Bighorn Sheep）聚集的熱門地點！四月下旬到五月初是大角羊產羔季節，在此可能看到羊群。當夕陽西沉，金紅色的光芒將無數尖銳岩石塔柱染成火焰色，遠處還可能看到在谷地或西北草原上覓食的野牛群。建議日落前20–30分鐘到達，搶占最佳位置。",
+          introEn: "The most popular viewpoint in Badlands — and a known gathering spot for Bighorn Sheep! Bison may also be visible grazing in the valley far below. As the sun sets, the jagged pinnacles ignite in gold and crimson — the whole horizon seems on fire. You can also see Sage Creek Wilderness and the Black Hills in the distance. Arrive 20–30 minutes early for the best spot.",
           photos: []
         },
         {
@@ -407,6 +448,7 @@ const TRIP_DATA = {
       theme: "荒地東區 → 米切爾",
       themeEn: "Badlands East → Mitchell",
       color: "#16A085",
+      drive: { distance: "約 120 英里 / 193 公里", time: "約 3 小時", distanceEn: "~120 mi / 193 km", timeEn: "~3 hrs" },
       accommodation: {
         name: "Hotel Highland Way",
         address: "2020 Highland Way, Mitchell, SD 57301",
@@ -431,8 +473,8 @@ const TRIP_DATA = {
           coords: [43.7389, -102.4916],
           time: "上午",
           timeEn: "Morning",
-          intro: "穿越一個天然岩石「門廊」，進入荒地地形的內部。步道以繩索做引導標誌，走入其中，周圍全是嶙峋怪石，彷彿置身另一星球。全程約0.75英里（1.2公里），地形稍有起伏，是沉浸感最強的荒地步道之一。",
-          introEn: "Walk through a natural 'door' in the rock and into the raw interior of the Badlands. Rope markers guide you through the open terrain, surrounded on all sides by jagged formations. 0.75 miles round-trip with some uneven ground — deeply immersive and otherworldly.",
+          intro: "穿越一個天然岩石「門廊」進入荒地的核心地帶。黃色標誌柱引導前行，過了標誌之後便是無路可循的原野，自行承擔風險探索。走入其中，周圍全是嶙峋怪石，眼前是通往荒地全景的視野，有一種穿越時空進入原始世界的震撼感。全程約0.75英里（1.2公里）。",
+          introEn: "Walk through a natural rock 'door' into the heart of the Badlands. Yellow posts mark the official trail — beyond the last post, you travel at your own risk into open wilderness. The view that opens up from inside is a raw, all-encompassing panorama of the Badlands interior. One of the most immersive experiences in the park. 0.75 miles round-trip.",
           photos: []
         },
         {
@@ -453,8 +495,8 @@ const TRIP_DATA = {
           coords: [43.7378, -102.4799],
           time: "上午",
           timeEn: "Morning",
-          intro: "荒地國家公園的標誌性全景觀景台，也是許多遊客從東側入口進入公園後的第一個停留點。從這裡可以一次看盡荒地的典型地貌：無數參差不齊的岩石塔柱、層層堆疊的地層、深邃的侵蝕溝壑，宛如外星球的景觀。是拍攝荒地全景的最佳地點之一。",
-          introEn: "The signature panoramic viewpoint at the eastern entrance to Badlands, and often the first stop for visitors. From here, the full Badlands landscape sprawls before you: thousands of jagged spires, layered geological strata, and eroded gullies stretching to the horizon. The quintessential Badlands view.",
+          intro: "荒地東段景色最為集中、也是彩帶山丘最密集的觀景台。在晴朗天氣下，可以看到東南地平線上隆起的「鷹巢岩（Eagle Nest Butte）」。視野中紅色條紋的布魯爾地層（Brule Formation，3,370–3,200萬年前）佔據主導，底部較深灰色的則是更古老的查德隆地層（Chadron Formation，3,500–3,370萬年前）。這是將荒地地質全景一次盡收眼底的最佳地點。",
+          introEn: "The most concentrated collection of colorful banded ridges in the entire park. On a clear day, Eagle Nest Butte rises on the southeastern horizon. The dominant red-striped layers are the Brule Formation (33.7–32 million years ago); the darker grey at the base is the older Chadron Formation (35–33.7 million years ago). The single best spot to see the full geological spectacle of the Badlands in one sweeping view.",
           photos: []
         },
         {
@@ -480,6 +522,7 @@ const TRIP_DATA = {
       theme: "前往堪薩斯城 · 烤肉晚餐",
       themeEn: "Drive to Kansas City · BBQ Night",
       color: "#2980B9",
+      drive: { distance: "約 380 英里 / 612 公里", time: "約 6 小時", distanceEn: "~380 mi / 612 km", timeEn: "~6 hrs" },
       accommodation: {
         name: "Kansas City Hotel (TBD)",
         address: "Kansas City, MO",
@@ -520,6 +563,7 @@ const TRIP_DATA = {
       theme: "尼爾遜藝術博物館 · 待續…",
       themeEn: "Nelson-Atkins Museum · To Be Continued…",
       color: "#6C3483",
+      drive: { distance: "市區移動", time: "輕鬆一天", distanceEn: "Local city", timeEn: "Easy day" },
       accommodation: {
         name: "TBD",
         address: "Kansas City, MO",
