@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   buildTabs();
   selectDay(0);
   syncHeaderHeight();
+  document.fonts.ready.then(syncHeaderHeight);
   window.addEventListener('resize', syncHeaderHeight);
   document.addEventListener('keydown', onKey);
 });

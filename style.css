@@ -658,6 +658,21 @@ a { color: inherit; text-decoration: none; }
     border-top: 1px solid var(--border);
   }
 
+  /* Larger fonts for mobile readability */
+  .sc-name        { font-size: 16px; }
+  .sc-intro       { font-size: 14px; line-height: 1.7; }
+  .sc-time        { font-size: 12px; }
+  .gmaps-btn      { font-size: 12px; }
+  .day-note       { font-size: 13px; }
+  .accom-strip    { font-size: 13px; }
+  .accom-strip .accom-addr { font-size: 12px; }
+  .day-group-header { font-size: 15px; }
+  .dgh-left .dgh-date { font-size: 12px; }
+  .sc-name-alt    { font-size: 12px; }
+  .name-en-inline { font-size: 12px; }
+  .day-tab .tab-date  { font-size: 13px; }
+  .day-tab .tab-label { font-size: 10px; }
+
   .popup-wrap { width: 230px; }
   .popup-intro { max-height: 100px; }
 
