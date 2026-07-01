@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#1A1A2E">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>2026 家庭公路旅行</title>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <!-- Fonts: Noto Sans TC for Chinese, Inter for English -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── Header ─────────────────────────────────────────── -->
+  <header id="header">
+    <div class="header-top">
+      <div class="trip-meta">
+        <h1 id="trip-title">2026 家庭公路旅行</h1>
+        <p id="trip-subtitle">科羅拉多 · 南達科他 · 堪薩斯城</p>
+      </div>
+      <div class="header-actions">
+        <span id="trip-dates-badge">7/2 – 7/10+</span>
+        <button id="lang-btn" onclick="toggleLang()" title="切換語言 / Switch Language">EN</button>
+      </div>
+    </div>
+    <nav id="day-tabs" role="tablist"></nav>
+  </header>
+
+  <!-- ── Main ───────────────────────────────────────────── -->
+  <main id="main">
+    <section id="map-section">
+      <div id="map"></div>
+      <div id="map-legend"></div>
+    </section>
+
+    <section id="timeline-section">
+      <div id="timeline-inner"></div>
+    </section>
+  </main>
+
+  <!-- ── Lightbox ───────────────────────────────────────── -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="圖片預覽">
+    <div id="lightbox-backdrop" onclick="closeLightbox()"></div>
+    <div id="lightbox-content">
+      <img id="lightbox-img" src="" alt="旅途照片">
+      <button id="lightbox-prev" onclick="lightboxNav(-1)">&#8249;</button>
+      <button id="lightbox-next" onclick="lightboxNav(1)">&#8250;</button>
+      <button id="lightbox-close" onclick="closeLightbox()">&#10005;</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
