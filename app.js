@@ -45,7 +45,18 @@ function initMap() {
     .addTo(map);
 
   const legend = document.getElementById('map-legend');
-  map.on('popupopen',  () => { legend.style.visibility = 'hidden'; });
+  map.on('popupopen', (e) => {
+    legend.style.visibility = 'hidden';
+    // Re-pan so popup clears the fixed header (measure fresh each time)
+    const pad = getHeaderHeight() + 16;
+    const popup = e.popup;
+    const px = map.latLngToContainerPoint(popup.getLatLng());
+    const popupEl = popup.getElement();
+    const popupH = popupEl ? popupEl.offsetHeight : 200;
+    if (px.y - popupH < pad) {
+      map.panBy([0, -(pad - (px.y - popupH))], { animate: true });
+    }
+  });
   map.on('popupclose', () => { legend.style.visibility = ''; });
 }
 
@@ -272,7 +283,9 @@ function renderMap(dayIndex) {
     const dayCoords = [];
 
     // Start from previous day's hotel to connect the gap
-    const prevDay = days[di - 1];
+    const prevDay = dayIndex === 0
+      ? days[di - 1]
+      : (dayIndex >= 2 ? TRIP_DATA.days[dayIndex - 2] : null);
     if (prevDay && prevDay.accommodation && prevDay.accommodation.coords) {
       dayCoords.push(prevDay.accommodation.coords);
     }
