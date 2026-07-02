@@ -340,7 +340,7 @@ function createStopMarker(stop, num, color) {
   });
 
   const marker = L.marker(stop.coords, { icon }).addTo(map);
-  marker.bindPopup(buildStopPopup(stop, num, color), { maxWidth: 260 });
+  marker.bindPopup(buildStopPopup(stop, num, color), { maxWidth: 260, autoPanPaddingTopLeft: L.point(10, getHeaderHeight() + 10) });
   marker.on('click', () => {
     focusStop(stop, color);
     scrollToCard(stop.id);
@@ -372,8 +372,12 @@ function createAccomMarker(ac, color) {
         ${mapsLink}
       </div>
     </div>
-  `, { maxWidth: 240 });
+  `, { maxWidth: 240, autoPanPaddingTopLeft: L.point(10, getHeaderHeight() + 10) });
   return marker;
+}
+
+function getHeaderHeight() {
+  return document.getElementById('header').offsetHeight;
 }
 
 function buildStopPopup(stop, num, color) {
