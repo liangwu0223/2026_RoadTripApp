@@ -268,8 +268,14 @@ function renderMap(dayIndex) {
   const days = dayIndex === 0 ? TRIP_DATA.days : [TRIP_DATA.days[dayIndex - 1]];
   const allCoords = [];
 
-  days.forEach((day) => {
+  days.forEach((day, di) => {
     const dayCoords = [];
+
+    // Start from previous day's hotel to connect the gap
+    const prevDay = days[di - 1];
+    if (prevDay && prevDay.accommodation && prevDay.accommodation.coords) {
+      dayCoords.push(prevDay.accommodation.coords);
+    }
 
     // Stop markers
     day.stops.forEach((stop, si) => {
