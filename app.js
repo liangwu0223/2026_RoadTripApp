@@ -43,6 +43,10 @@ function initMap() {
   L.control.attribution({ position: 'bottomleft', prefix: false })
     .addAttribution('© <a href="https://www.openstreetmap.org/copyright">OSM</a> © CartoDB')
     .addTo(map);
+
+  const legend = document.getElementById('map-legend');
+  map.on('popupopen',  () => { legend.style.visibility = 'hidden'; });
+  map.on('popupclose', () => { legend.style.visibility = ''; });
 }
 
 // ── Tabs ─────────────────────────────────────────────────────
